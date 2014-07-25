@@ -7,8 +7,11 @@ var queue = require('queue-async');
 var level = require('level');
 require('approvals').mocha(__dirname + '/approvals');
 
+
 suite('Index metaphones and words', function indexSuite() {
-  test('Verify ten words and their metaphones are indexed', 
+  var numberOfWordsToIndex = 50;
+
+  test('Verify ' + numberOfWordsToIndex + ' words and their metaphones are indexed', 
     function testIndex(testDone) {
       var testInstance = this;
 
@@ -28,7 +31,7 @@ suite('Index metaphones and words', function indexSuite() {
         q.defer(indexer.index, word);
 
         wordsProcessed += 1;
-        if (wordsProcessed >= 10) {
+        if (wordsProcessed >= numberOfWordsToIndex) {
           readStream.unpipe();
           lineStream.end();
           q.awaitAll(function closeIndexerAndCheckDb(error) {
