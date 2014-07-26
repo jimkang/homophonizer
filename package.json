@@ -1,5 +1,5 @@
 {
-  "name": "homonymizer",
+  "name": "homophonizer",
   "version": "0.1.0",
   "description": "Gets homonyms.",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:jimkang/homonymizer.git"
+    "url": "git@github.com:jimkang/homophonizer.git"
   },
   "keywords": [
     "module",
@@ -17,9 +17,9 @@
   "author": "Jim Kang",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jimkang/homonymizer/issues"
+    "url": "https://github.com/jimkang/homophonizer/issues"
   },
-  "homepage": "https://github.com/jimkang/homonymizer",
+  "homepage": "https://github.com/jimkang/homophonizer",
   "devDependencies": {
     "mocha": "~1.18.2",
     "idmaker": "~0.1.1",

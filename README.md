@@ -1,5 +1,5 @@
-homonymizer
-===========
+homophonizer
+============
 
 This module finds homonyms for words. For example:
 
@@ -10,7 +10,7 @@ Etc.!
 Installation
 ------------
 
-    npm install homonymizer
+    npm install homophonizer
 
 Usage
 -----
