@@ -8,14 +8,11 @@ function createIndexer(opts) {
   var db = levelwrap.createLevelWrap(opts.dbLocation);
 
   function index(word, done) {
-    debugger;
     if (!word || word.length < 1) {
       process.nextTick(done);
     }
 
     var metaphones = doublemetaphone(word);
-    console.log(metaphones);
-
     var q = queue();
 
     // Index by word.
