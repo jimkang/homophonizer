@@ -29,8 +29,9 @@
   "dependencies": {
     "double-metaphone": "~0.1.0",
     "doublemetaphone": "~0.1.2",
-    "basicset-levelwrap": "~0.2.1",
     "split": "~0.3.0",
-    "queue-async": "~1.0.7"
+    "queue-async": "~1.0.7",
+    "level-sublevel": "~6.1.6",
+    "level": "~0.18.0"
   }
 }

@@ -1,0 +1,587 @@
+{
+  "!pm!A": {
+    "doc": "pm",
+    "id": "A",
+    "word": "AAA"
+  },
+  "!pm!AKR": {
+    "doc": "pm",
+    "id": "AKR",
+    "word": "AAKER"
+  },
+  "!pm!ALS0": {
+    "doc": "pm",
+    "id": "ALS0",
+    "word": "AALSETH"
+  },
+  "!pm!AMT": {
+    "doc": "pm",
+    "id": "AMT",
+    "word": "AAMODT"
+  },
+  "!pm!ANKR": {
+    "doc": "pm",
+    "id": "ANKR",
+    "word": "AANCOR"
+  },
+  "!pm!AP": {
+    "doc": "pm",
+    "id": "AP",
+    "word": "AB"
+  },
+  "!pm!APK": {
+    "doc": "pm",
+    "id": "APK",
+    "word": "ABACO"
+  },
+  "!pm!APKS": {
+    "doc": "pm",
+    "id": "APKS",
+    "word": "ABACUS"
+  },
+  "!pm!APLKN": {
+    "doc": "pm",
+    "id": "APLKN",
+    "word": "ABALKIN"
+  },
+  "!pm!APLN": {
+    "doc": "pm",
+    "id": "APLN",
+    "word": "ABALONE"
+  },
+  "!pm!APLS": {
+    "doc": "pm",
+    "id": "APLS",
+    "word": "ABALOS"
+  },
+  "!pm!APNT": {
+    "doc": "pm",
+    "id": "APNT",
+    "word": "ABANTO"
+  },
+  "!pm!APNTN": {
+    "doc": "pm",
+    "id": "APNTN",
+    "word": "ABANDON"
+  },
+  "!pm!APNTNMNT": {
+    "doc": "pm",
+    "id": "APNTNMNT",
+    "word": "ABANDONMENT"
+  },
+  "!pm!APNTNMNTS": {
+    "doc": "pm",
+    "id": "APNTNMNTS",
+    "word": "ABANDONMENTS"
+  },
+  "!pm!APNTNNK": {
+    "doc": "pm",
+    "id": "APNTNNK",
+    "word": "ABANDONING"
+  },
+  "!pm!APNTNS": {
+    "doc": "pm",
+    "id": "APNTNS",
+    "word": "ABANDONS"
+  },
+  "!pm!APNTNT": {
+    "doc": "pm",
+    "id": "APNTNT",
+    "word": "ABANDONED"
+  },
+  "!pm!APP": {
+    "doc": "pm",
+    "id": "APP",
+    "word": "ABABA"
+  },
+  "!pm!APR": {
+    "doc": "pm",
+    "id": "APR",
+    "word": "ABARE"
+  },
+  "!pm!APRK": {
+    "doc": "pm",
+    "id": "APRK",
+    "word": "ABARCA"
+  },
+  "!pm!APS": {
+    "doc": "pm",
+    "id": "APS",
+    "word": "ABASIA"
+  },
+  "!pm!APSKL": {
+    "doc": "pm",
+    "id": "APSKL",
+    "word": "ABASCAL"
+  },
+  "!pm!APT": {
+    "doc": "pm",
+    "id": "APT",
+    "word": "ABADIE"
+  },
+  "!pm!APTK": {
+    "doc": "pm",
+    "id": "APTK",
+    "word": "ABADAKA"
+  },
+  "!pm!APX": {
+    "doc": "pm",
+    "id": "APX",
+    "word": "ABASH"
+  },
+  "!pm!APXT": {
+    "doc": "pm",
+    "id": "APXT",
+    "word": "ABASHED"
+  },
+  "!pm!ARN": {
+    "doc": "pm",
+    "id": "ARN",
+    "word": "AARON"
+  },
+  "!pm!ARNS": {
+    "doc": "pm",
+    "id": "ARNS",
+    "word": "AARONS"
+  },
+  "!pm!ARNSN": {
+    "doc": "pm",
+    "id": "ARNSN",
+    "word": "AARONSON"
+  },
+  "!pm!ART": {
+    "doc": "pm",
+    "id": "ART",
+    "word": "AARTI"
+  },
+  "!pm!ARTFRK": {
+    "doc": "pm",
+    "id": "ARTFRK",
+    "word": "AARDVARK"
+  },
+  "!pm!ARTM": {
+    "doc": "pm",
+    "id": "ARTM",
+    "word": "AARDEMA"
+  },
+  "!pm!AS": {
+    "doc": "pm",
+    "id": "AS",
+    "word": "AASE"
+  },
+  "!pm!ASN": {
+    "doc": "pm",
+    "id": "ASN",
+    "word": "AASEN"
+  },
+  "!pm!AXN": {
+    "doc": "pm",
+    "id": "AXN",
+    "word": "AACHEN"
+  },
+  "!pm!AXNR": {
+    "doc": "pm",
+    "id": "AXNR",
+    "word": "AACHENER"
+  },
+  "!sm!A": {
+    "doc": "sm",
+    "id": "A",
+    "word": "AAA"
+  },
+  "!sm!AKN": {
+    "doc": "sm",
+    "id": "AKN",
+    "word": "AACHEN"
+  },
+  "!sm!AKNR": {
+    "doc": "sm",
+    "id": "AKNR",
+    "word": "AACHENER"
+  },
+  "!sm!AKR": {
+    "doc": "sm",
+    "id": "AKR",
+    "word": "AAKER"
+  },
+  "!sm!ALST": {
+    "doc": "sm",
+    "id": "ALST",
+    "word": "AALSETH"
+  },
+  "!sm!AMT": {
+    "doc": "sm",
+    "id": "AMT",
+    "word": "AAMODT"
+  },
+  "!sm!ANKR": {
+    "doc": "sm",
+    "id": "ANKR",
+    "word": "AANCOR"
+  },
+  "!sm!AP": {
+    "doc": "sm",
+    "id": "AP",
+    "word": "AB"
+  },
+  "!sm!APK": {
+    "doc": "sm",
+    "id": "APK",
+    "word": "ABACO"
+  },
+  "!sm!APKS": {
+    "doc": "sm",
+    "id": "APKS",
+    "word": "ABACUS"
+  },
+  "!sm!APLKN": {
+    "doc": "sm",
+    "id": "APLKN",
+    "word": "ABALKIN"
+  },
+  "!sm!APLN": {
+    "doc": "sm",
+    "id": "APLN",
+    "word": "ABALONE"
+  },
+  "!sm!APLS": {
+    "doc": "sm",
+    "id": "APLS",
+    "word": "ABALOS"
+  },
+  "!sm!APNT": {
+    "doc": "sm",
+    "id": "APNT",
+    "word": "ABANTO"
+  },
+  "!sm!APNTN": {
+    "doc": "sm",
+    "id": "APNTN",
+    "word": "ABANDON"
+  },
+  "!sm!APNTNMNT": {
+    "doc": "sm",
+    "id": "APNTNMNT",
+    "word": "ABANDONMENT"
+  },
+  "!sm!APNTNMNTS": {
+    "doc": "sm",
+    "id": "APNTNMNTS",
+    "word": "ABANDONMENTS"
+  },
+  "!sm!APNTNNK": {
+    "doc": "sm",
+    "id": "APNTNNK",
+    "word": "ABANDONING"
+  },
+  "!sm!APNTNS": {
+    "doc": "sm",
+    "id": "APNTNS",
+    "word": "ABANDONS"
+  },
+  "!sm!APNTNT": {
+    "doc": "sm",
+    "id": "APNTNT",
+    "word": "ABANDONED"
+  },
+  "!sm!APP": {
+    "doc": "sm",
+    "id": "APP",
+    "word": "ABABA"
+  },
+  "!sm!APR": {
+    "doc": "sm",
+    "id": "APR",
+    "word": "ABARE"
+  },
+  "!sm!APRK": {
+    "doc": "sm",
+    "id": "APRK",
+    "word": "ABARCA"
+  },
+  "!sm!APSKL": {
+    "doc": "sm",
+    "id": "APSKL",
+    "word": "ABASCAL"
+  },
+  "!sm!APT": {
+    "doc": "sm",
+    "id": "APT",
+    "word": "ABADIE"
+  },
+  "!sm!APTK": {
+    "doc": "sm",
+    "id": "APTK",
+    "word": "ABADAKA"
+  },
+  "!sm!APX": {
+    "doc": "sm",
+    "id": "APX",
+    "word": "ABASIA"
+  },
+  "!sm!APXT": {
+    "doc": "sm",
+    "id": "APXT",
+    "word": "ABASHED"
+  },
+  "!sm!ARN": {
+    "doc": "sm",
+    "id": "ARN",
+    "word": "AARON"
+  },
+  "!sm!ARNS": {
+    "doc": "sm",
+    "id": "ARNS",
+    "word": "AARONS"
+  },
+  "!sm!ARNSN": {
+    "doc": "sm",
+    "id": "ARNSN",
+    "word": "AARONSON"
+  },
+  "!sm!ART": {
+    "doc": "sm",
+    "id": "ART",
+    "word": "AARTI"
+  },
+  "!sm!ARTFRK": {
+    "doc": "sm",
+    "id": "ARTFRK",
+    "word": "AARDVARK"
+  },
+  "!sm!ARTM": {
+    "doc": "sm",
+    "id": "ARTM",
+    "word": "AARDEMA"
+  },
+  "!sm!AS": {
+    "doc": "sm",
+    "id": "AS",
+    "word": "AASE"
+  },
+  "!sm!ASN": {
+    "doc": "sm",
+    "id": "ASN",
+    "word": "AASEN"
+  },
+  "!w!A": {
+    "id": "A",
+    "primaryMetaphone": "A",
+    "secondaryMetaphone": "A"
+  },
+  "!w!AAA": {
+    "id": "AAA",
+    "primaryMetaphone": "A",
+    "secondaryMetaphone": "A"
+  },
+  "!w!AABERG": {
+    "id": "AABERG",
+    "primaryMetaphone": "APRK",
+    "secondaryMetaphone": "APRK"
+  },
+  "!w!AACHEN": {
+    "id": "AACHEN",
+    "primaryMetaphone": "AXN",
+    "secondaryMetaphone": "AKN"
+  },
+  "!w!AACHENER": {
+    "id": "AACHENER",
+    "primaryMetaphone": "AXNR",
+    "secondaryMetaphone": "AKNR"
+  },
+  "!w!AAKER": {
+    "id": "AAKER",
+    "primaryMetaphone": "AKR",
+    "secondaryMetaphone": "AKR"
+  },
+  "!w!AALSETH": {
+    "id": "AALSETH",
+    "primaryMetaphone": "ALS0",
+    "secondaryMetaphone": "ALST"
+  },
+  "!w!AAMODT": {
+    "id": "AAMODT",
+    "primaryMetaphone": "AMT",
+    "secondaryMetaphone": "AMT"
+  },
+  "!w!AANCOR": {
+    "id": "AANCOR",
+    "primaryMetaphone": "ANKR",
+    "secondaryMetaphone": "ANKR"
+  },
+  "!w!AARDEMA": {
+    "id": "AARDEMA",
+    "primaryMetaphone": "ARTM",
+    "secondaryMetaphone": "ARTM"
+  },
+  "!w!AARDVARK": {
+    "id": "AARDVARK",
+    "primaryMetaphone": "ARTFRK",
+    "secondaryMetaphone": "ARTFRK"
+  },
+  "!w!AARON": {
+    "id": "AARON",
+    "primaryMetaphone": "ARN",
+    "secondaryMetaphone": "ARN"
+  },
+  "!w!AARONS": {
+    "id": "AARONS",
+    "primaryMetaphone": "ARNS",
+    "secondaryMetaphone": "ARNS"
+  },
+  "!w!AARONSON": {
+    "id": "AARONSON",
+    "primaryMetaphone": "ARNSN",
+    "secondaryMetaphone": "ARNSN"
+  },
+  "!w!AARTI": {
+    "id": "AARTI",
+    "primaryMetaphone": "ART",
+    "secondaryMetaphone": "ART"
+  },
+  "!w!AASE": {
+    "id": "AASE",
+    "primaryMetaphone": "AS",
+    "secondaryMetaphone": "AS"
+  },
+  "!w!AASEN": {
+    "id": "AASEN",
+    "primaryMetaphone": "ASN",
+    "secondaryMetaphone": "ASN"
+  },
+  "!w!AB": {
+    "id": "AB",
+    "primaryMetaphone": "AP",
+    "secondaryMetaphone": "AP"
+  },
+  "!w!ABABA": {
+    "id": "ABABA",
+    "primaryMetaphone": "APP",
+    "secondaryMetaphone": "APP"
+  },
+  "!w!ABACHA": {
+    "id": "ABACHA",
+    "primaryMetaphone": "APK",
+    "secondaryMetaphone": "APK"
+  },
+  "!w!ABACK": {
+    "id": "ABACK",
+    "primaryMetaphone": "APK",
+    "secondaryMetaphone": "APK"
+  },
+  "!w!ABACO": {
+    "id": "ABACO",
+    "primaryMetaphone": "APK",
+    "secondaryMetaphone": "APK"
+  },
+  "!w!ABACUS": {
+    "id": "ABACUS",
+    "primaryMetaphone": "APKS",
+    "secondaryMetaphone": "APKS"
+  },
+  "!w!ABAD": {
+    "id": "ABAD",
+    "primaryMetaphone": "APT",
+    "secondaryMetaphone": "APT"
+  },
+  "!w!ABADAKA": {
+    "id": "ABADAKA",
+    "primaryMetaphone": "APTK",
+    "secondaryMetaphone": "APTK"
+  },
+  "!w!ABADI": {
+    "id": "ABADI",
+    "primaryMetaphone": "APT",
+    "secondaryMetaphone": "APT"
+  },
+  "!w!ABADIE": {
+    "id": "ABADIE",
+    "primaryMetaphone": "APT",
+    "secondaryMetaphone": "APT"
+  },
+  "!w!ABAIR": {
+    "id": "ABAIR",
+    "primaryMetaphone": "APR",
+    "secondaryMetaphone": "APR"
+  },
+  "!w!ABALKIN": {
+    "id": "ABALKIN",
+    "primaryMetaphone": "APLKN",
+    "secondaryMetaphone": "APLKN"
+  },
+  "!w!ABALONE": {
+    "id": "ABALONE",
+    "primaryMetaphone": "APLN",
+    "secondaryMetaphone": "APLN"
+  },
+  "!w!ABALOS": {
+    "id": "ABALOS",
+    "primaryMetaphone": "APLS",
+    "secondaryMetaphone": "APLS"
+  },
+  "!w!ABANDON": {
+    "id": "ABANDON",
+    "primaryMetaphone": "APNTN",
+    "secondaryMetaphone": "APNTN"
+  },
+  "!w!ABANDONED": {
+    "id": "ABANDONED",
+    "primaryMetaphone": "APNTNT",
+    "secondaryMetaphone": "APNTNT"
+  },
+  "!w!ABANDONING": {
+    "id": "ABANDONING",
+    "primaryMetaphone": "APNTNNK",
+    "secondaryMetaphone": "APNTNNK"
+  },
+  "!w!ABANDONMENT": {
+    "id": "ABANDONMENT",
+    "primaryMetaphone": "APNTNMNT",
+    "secondaryMetaphone": "APNTNMNT"
+  },
+  "!w!ABANDONMENTS": {
+    "id": "ABANDONMENTS",
+    "primaryMetaphone": "APNTNMNTS",
+    "secondaryMetaphone": "APNTNMNTS"
+  },
+  "!w!ABANDONS": {
+    "id": "ABANDONS",
+    "primaryMetaphone": "APNTNS",
+    "secondaryMetaphone": "APNTNS"
+  },
+  "!w!ABANTO": {
+    "id": "ABANTO",
+    "primaryMetaphone": "APNT",
+    "secondaryMetaphone": "APNT"
+  },
+  "!w!ABARCA": {
+    "id": "ABARCA",
+    "primaryMetaphone": "APRK",
+    "secondaryMetaphone": "APRK"
+  },
+  "!w!ABARE": {
+    "id": "ABARE",
+    "primaryMetaphone": "APR",
+    "secondaryMetaphone": "APR"
+  },
+  "!w!ABASCAL": {
+    "id": "ABASCAL",
+    "primaryMetaphone": "APSKL",
+    "secondaryMetaphone": "APSKL"
+  },
+  "!w!ABASH": {
+    "id": "ABASH",
+    "primaryMetaphone": "APX",
+    "secondaryMetaphone": "APX"
+  },
+  "!w!ABASHED": {
+    "id": "ABASHED",
+    "primaryMetaphone": "APXT",
+    "secondaryMetaphone": "APXT"
+  },
+  "!w!ABASIA": {
+    "id": "ABASIA",
+    "primaryMetaphone": "APS",
+    "secondaryMetaphone": "APX"
+  }
+}

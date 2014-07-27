@@ -1,4 +1,4 @@
-var levelwrap = require('basicset-levelwrap');
+var setUpSubleveledDb = require('./subleveleddb');
 var queue = require('queue-async');
 var path = require('path');
 
@@ -10,24 +10,19 @@ function createHomophonizer(opts) {
   
   var dbPath = path.resolve(__dirname, opts.dbLocation);
   console.log(dbPath);
-  db = levelwrap.createLevelWrap(dbPath);
+  var db = setUpSubleveledDb(opts);
 
   function getHomophones(word, done) {
-    // var stream = db.getDocObjectStream('w');
-
-    // stream.pipe(process.stdout);
-    // return;
-
-    db.getObject(word.toUpperCase(), 'w', lookupMetaphones);
+    db.words.get(word.toUpperCase(), lookupMetaphones);
 
     function lookupMetaphones(error, wordObject) {
       if (checkError(error, done)) {
         var q = queue();
         // if (wordObject.primaryMetaphone) {
-          q.defer(db.getObject, wordObject.primaryMetaphone, 'pm');
+          q.defer(db.primarymetaphones.get, wordObject.primaryMetaphone);
         // }
         if (wordObject.secondaryMetaphone) {
-          q.defer(db.getObject, wordObject.secondaryMetaphone, 'sm');
+          q.defer(db.secondarymetaphones.get, wordObject.secondaryMetaphone);
         }
         q.await(function pickMetaphoneWords(error, primary, secondary) {
             console.log(error, primary, secondary);

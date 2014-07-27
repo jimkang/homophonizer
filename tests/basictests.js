@@ -29,7 +29,11 @@ suite('Index metaphones and words', function indexSuite() {
       var q = queue();
 
       lineStream.on('data', function indexWord(word) {
-        console.log(word);
+        // console.log(word);
+        if (!word) {
+          return;
+        }
+
         q.defer(indexer.index, word);
 
         wordsProcessed += 1;
@@ -37,6 +41,7 @@ suite('Index metaphones and words', function indexSuite() {
           readStream.unpipe();
           lineStream.end();
           q.awaitAll(function closeIndexerAndCheckDb(error) {
+            assert.ok(!error, error);
             indexer.closeDb(serializeDb);
           });
         }
@@ -50,8 +55,7 @@ suite('Index metaphones and words', function indexSuite() {
 
         db.createReadStream()
           .on('data', function writeDataToObject(data) {
-            debugger;
-            console.log(data);
+            // console.log(data);
             serializedDb[data.key] = data.value;
           })
           .on('error', checkDb)
