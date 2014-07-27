@@ -5,6 +5,8 @@ var fs = require('fs');
 var idmaker = require('idmaker');
 var queue = require('queue-async');
 var level = require('level');
+var homophonizerFactory = require('../homophonizer');
+
 require('approvals').mocha(__dirname + '/approvals');
 
 
@@ -64,6 +66,72 @@ suite('Index metaphones and words', function indexSuite() {
       }
     }
   );
+});
+
+// Requires a full metaphone DB to be built.
+suite('Find homophones', function findHomophonesSuite() {
+  var homophonizer;
+
+  beforeEach(function createHomophonizer() {
+    homophonizer = homophonizerFactory({
+      dbLocation: './metaphone.db'
+    });
+  });
+
+  afterEach(function closeHomophonizer(testDone) {
+    homophonizer.shutdown(testDone);
+    homophonizer = null;
+  });
+
+  test('Verify that an error is returned if homophonizer can\'t find the word', 
+    function testMissing(testDone) {
+      homophonizer.getHomophones('sdfwerfsdfsd', 
+        function checkHomophones(error, homophones) {
+          assert.ok(error, 'Should have returned an error.');
+          testDone();
+        }
+      );
+    }
+  );
+
+  test('Verify that homophones can be found for WALK', 
+    function testWhatever(testDone) {
+      homophonizer.getHomophones('WALK', 
+        function checkHomophones(error, homophones) {
+          assert.ok(!error, error);
+          assert.deepEqual(homophones.primary, ['WOK, YOLK']);
+          assert.deepEqual(homophones.secondary, ['WOOLCO']);
+          testDone();
+        }
+      );
+    }
+  );
+
+  test('Verify that homophones can be found for (lowercase) walk', 
+    function testWhatever(testDone) {
+      homophonizer.getHomophones('walk', 
+        function checkHomophones(error, homophones) {
+          assert.ok(!error, error);
+          assert.deepEqual(homophones.primary, ['WOK, YOLK']);
+          assert.deepEqual(homophones.secondary, ['WOOLCO']);
+          testDone();
+        }
+      );
+    }
+  );
+
+  // test('Verify that no homophones can be found for whatever',
+  //   function testWhatever(testDone) {
+  //     homophonizer.getHomophones('whatever', 
+  //       function checkHomophones(error, homophones) {
+  //         assert.ok(!error, error);
+  //         console.log(homophones);
+  //         testDone();
+  //       }
+  //     );
+  //   }
+  // );
+
 });
 
 // http://www.geedew.com/2012/10/24/remove-a-directory-that-is-not-empty-in-nodejs/
