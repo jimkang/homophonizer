@@ -2,15 +2,15 @@ var setUpSubleveledDb = require('./subleveleddb');
 var queue = require('queue-async');
 var path = require('path');
 var _ = require('lodash');
+var dbsettings = require('./metaphone-db-settings');
 
 var db;
 
 function createHomophonizer(opts) {
   // opts:
   //  dbLocation: database file location
-  
   var dbPath = path.resolve(__dirname, opts.dbLocation);
-  var db = setUpSubleveledDb(opts);
+  var db = setUpSubleveledDb(_.defaults(opts, dbsettings));
 
   function getHomophones(word, done) {
     db.words.get(word.toUpperCase(), lookupMetaphones);
