@@ -1,11 +1,11 @@
 var assert = require('assert');
-var metaphoneindexerFactory = require('../metaphoneindexer');
+var metaphoneindexerFactory = require('../metaphone/metaphoneindexer');
 var split = require('split');
 var fs = require('fs');
 var idmaker = require('idmaker');
 var queue = require('queue-async');
 var level = require('level');
-var homophonizerFactory = require('../homophonizer');
+var homophonizerFactory = require('../metaphone/metaphonehomophonizer');
 
 require('approvals').mocha(__dirname + '/approvals');
 
@@ -22,7 +22,7 @@ suite('Index metaphones and words', function indexSuite() {
         dbLocation: dbLocation
       });
 
-      var readStream = fs.createReadStream('cmudict.0.7a-words-only.txt');
+      var readStream = fs.createReadStream('metaphone/cmudict.0.7a-words-only.txt');
       var lineStream = split();
       readStream.pipe(lineStream);
       var wordsProcessed = 0;
@@ -76,7 +76,7 @@ suite('Find homophones', function findHomophonesSuite() {
 
   beforeEach(function createHomophonizer() {
     homophonizer = homophonizerFactory({
-      dbLocation: './metaphone.db'
+      dbLocation: './metaphone/metaphone.db'
     });
   });
 
@@ -101,7 +101,7 @@ suite('Find homophones', function findHomophonesSuite() {
       homophonizer.getHomophones('WALK', 
         function checkHomophones(error, homophones) {
           assert.ok(!error, error);
-          
+
           assert.ok(homophones.primary.indexOf('WALCK') !== -1);
           assert.ok(homophones.primary.indexOf('YOLK') !== -1);
 
@@ -124,17 +124,6 @@ suite('Find homophones', function findHomophonesSuite() {
 
           assert.ok(homophones.secondary.indexOf('FOLK') !== -1);
           assert.ok(homophones.secondary.indexOf('WELK') !== -1);
-          testDone();
-        }
-      );
-    }
-  );
-
-  test('Verify that no homophones can be found for ASDF',
-    function testWhatever(testDone) {
-      homophonizer.getHomophones('ASDF', 
-        function checkHomophones(error, homophones) {
-          assert.ok(error, 'Should have been an error.');
           testDone();
         }
       );
