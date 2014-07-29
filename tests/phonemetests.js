@@ -6,7 +6,7 @@ var idmaker = require('idmaker');
 var queue = require('queue-async');
 var level = require('level');
 var homophonizerFactory = require('../phoneme/phonemehomophonizer');
-var phonemeNavigator = require('../phoneme/phonemenavigator');
+var phonemeNavigator = require('../phoneme/phonemeNavigator');
 
 require('approvals').mocha(__dirname + '/approvals');
 
@@ -224,8 +224,111 @@ suite('Phoneme navigator', function navigatorSuite() {
         checkClassifyPhoneme('T', 'stop');
       }
     );
-
   });
+
+  suite('Related phonemes', function relatedSuite() {
+    test('Verify that related phonemes are found for a vowel', 
+      function testRelatedVowels() {
+        assert.deepEqual(
+          phonemeNavigator.getPhonemesInSameClass('AY'),
+          [
+            'AA',
+            'AE',
+            'AH',
+            'AO',
+            'AW',
+            'EH',
+            'ER',
+            'EY',
+            'IH',
+            'IY',
+            'OW',
+            'OY',
+            'UH',
+            'UW'
+          ]
+        );
+      }
+    );
+
+    test('Verify that related phonemes are found for an affricate', 
+      function testRelatedAffricates() {
+        assert.deepEqual(
+          phonemeNavigator.getPhonemesInSameClass('JH'),
+          ['CH']
+        );
+      }
+    );
+
+    test('Verify that related phonemes are found for an aspirate', 
+      function testRelated() {
+        assert.deepEqual(
+          phonemeNavigator.getPhonemesInSameClass('HH'),
+          []
+        );
+      }
+    );
+
+    test('Verify that related phonemes are found for a fricative', 
+      function testRelatedFricatives() {
+        assert.deepEqual(
+          phonemeNavigator.getPhonemesInSameClass('V'),
+          [
+            'DH',
+            'F',
+            'S',
+            'SH',
+            'TH',
+            'Z',
+            'ZH'
+          ]
+        );
+      }
+    );
+
+    test('Verify that related phonemes are found for a liquid', 
+      function testRelatedLiquid() {
+        assert.deepEqual(
+          phonemeNavigator.getPhonemesInSameClass('L'),
+          ['R']
+        );
+      }
+    );
+
+    test('Verify that related phonemes are found for a nasal', 
+      function testRelatedNasals() {
+        assert.deepEqual(
+          phonemeNavigator.getPhonemesInSameClass('N'),
+          ['M', 'NG']
+        );
+      }
+    );
+
+    test('Verify that related phonemes are found for a semivowel', 
+      function testRelatedSemivowels() {
+        assert.deepEqual(
+          phonemeNavigator.getPhonemesInSameClass('Y'),
+          ['W']
+        );
+      }
+    );
+
+    test('Verify that related phonemes are found for a stop', 
+      function testRelatedStops() {
+        assert.deepEqual(
+          phonemeNavigator.getPhonemesInSameClass('T'),
+          [
+            'B',
+            'D',
+            'G',
+            'K',
+            'P'
+          ]
+        );
+      }
+    );
+  });
+
 });
 
 // http://www.geedew.com/2012/10/24/remove-a-directory-that-is-not-empty-in-nodejs/

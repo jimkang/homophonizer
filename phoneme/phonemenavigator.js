@@ -1,4 +1,5 @@
 // This is a singleton-style module.
+var _ = require('lodash');
 
 var phonemeListsByClassification = {
   vowel: [
@@ -105,6 +106,16 @@ function classifyPhoneme(phoneme) {
     classificationsByPhoneme[phoneme] : null;
 }
 
+function getPhonemesInSameClass(phoneme) {
+  var fellows = [];
+  var phonemeClass = classifyPhoneme(phoneme);
+  if (phonemeClass) {
+    fellows = _.without(phonemeListsByClassification[phonemeClass], phoneme);
+  }
+  return fellows;
+}
+
 module.exports = {
-  classifyPhoneme: classifyPhoneme
+  classifyPhoneme: classifyPhoneme,
+  getPhonemesInSameClass: getPhonemesInSameClass
 };
