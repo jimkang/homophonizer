@@ -29,7 +29,6 @@ suite('Index metaphones and words', function indexSuite() {
       var q = queue();
 
       lineStream.on('data', function indexWord(word) {
-        // console.log(word);
         if (!word) {
           return;
         }
@@ -55,7 +54,6 @@ suite('Index metaphones and words', function indexSuite() {
 
         db.createReadStream()
           .on('data', function writeDataToObject(data) {
-            // console.log(data);
             serializedDb[data.key] = data.value;
           })
           .on('error', checkDb)
@@ -103,8 +101,13 @@ suite('Find homophones', function findHomophonesSuite() {
       homophonizer.getHomophones('WALK', 
         function checkHomophones(error, homophones) {
           assert.ok(!error, error);
-          assert.deepEqual(homophones.primary, ['WOK, YOLK']);
-          assert.deepEqual(homophones.secondary, ['WOOLCO']);
+          
+          assert.ok(homophones.primary.indexOf('WALCK') !== -1);
+          assert.ok(homophones.primary.indexOf('YOLK') !== -1);
+
+          assert.ok(homophones.secondary.indexOf('FOLK') !== -1);
+          assert.ok(homophones.secondary.indexOf('WELK') !== -1);
+
           testDone();
         }
       );
@@ -116,25 +119,27 @@ suite('Find homophones', function findHomophonesSuite() {
       homophonizer.getHomophones('walk', 
         function checkHomophones(error, homophones) {
           assert.ok(!error, error);
-          assert.deepEqual(homophones.primary, ['WOK, YOLK']);
-          assert.deepEqual(homophones.secondary, ['WOOLCO']);
+          assert.ok(homophones.primary.indexOf('WALCK') !== -1);
+          assert.ok(homophones.primary.indexOf('YOLK') !== -1);
+
+          assert.ok(homophones.secondary.indexOf('FOLK') !== -1);
+          assert.ok(homophones.secondary.indexOf('WELK') !== -1);
           testDone();
         }
       );
     }
   );
 
-  // test('Verify that no homophones can be found for whatever',
-  //   function testWhatever(testDone) {
-  //     homophonizer.getHomophones('whatever', 
-  //       function checkHomophones(error, homophones) {
-  //         assert.ok(!error, error);
-  //         console.log(homophones);
-  //         testDone();
-  //       }
-  //     );
-  //   }
-  // );
+  test('Verify that no homophones can be found for ASDF',
+    function testWhatever(testDone) {
+      homophonizer.getHomophones('ASDF', 
+        function checkHomophones(error, homophones) {
+          assert.ok(error, 'Should have been an error.');
+          testDone();
+        }
+      );
+    }
+  );
 
 });
 

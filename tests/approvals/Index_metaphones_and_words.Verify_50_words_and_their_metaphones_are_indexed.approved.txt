@@ -1,365 +1,440 @@
 {
-  "!pm!A": {
+  "!pm#A!A": {
+    "doc": "pm",
+    "id": "A",
+    "word": "A"
+  },
+  "!pm#A!AAA": {
     "doc": "pm",
     "id": "A",
     "word": "AAA"
   },
-  "!pm!AKR": {
+  "!pm#AKR!AAKER": {
     "doc": "pm",
     "id": "AKR",
     "word": "AAKER"
   },
-  "!pm!ALS0": {
+  "!pm#ALS0!AALSETH": {
     "doc": "pm",
     "id": "ALS0",
     "word": "AALSETH"
   },
-  "!pm!AMT": {
+  "!pm#AMT!AAMODT": {
     "doc": "pm",
     "id": "AMT",
     "word": "AAMODT"
   },
-  "!pm!ANKR": {
+  "!pm#ANKR!AANCOR": {
     "doc": "pm",
     "id": "ANKR",
     "word": "AANCOR"
   },
-  "!pm!AP": {
+  "!pm#AP!AB": {
     "doc": "pm",
     "id": "AP",
     "word": "AB"
   },
-  "!pm!APK": {
+  "!pm#APK!ABACHA": {
+    "doc": "pm",
+    "id": "APK",
+    "word": "ABACHA"
+  },
+  "!pm#APK!ABACK": {
+    "doc": "pm",
+    "id": "APK",
+    "word": "ABACK"
+  },
+  "!pm#APK!ABACO": {
     "doc": "pm",
     "id": "APK",
     "word": "ABACO"
   },
-  "!pm!APKS": {
+  "!pm#APKS!ABACUS": {
     "doc": "pm",
     "id": "APKS",
     "word": "ABACUS"
   },
-  "!pm!APLKN": {
+  "!pm#APLKN!ABALKIN": {
     "doc": "pm",
     "id": "APLKN",
     "word": "ABALKIN"
   },
-  "!pm!APLN": {
+  "!pm#APLN!ABALONE": {
     "doc": "pm",
     "id": "APLN",
     "word": "ABALONE"
   },
-  "!pm!APLS": {
+  "!pm#APLS!ABALOS": {
     "doc": "pm",
     "id": "APLS",
     "word": "ABALOS"
   },
-  "!pm!APNT": {
+  "!pm#APNT!ABANTO": {
     "doc": "pm",
     "id": "APNT",
     "word": "ABANTO"
   },
-  "!pm!APNTN": {
+  "!pm#APNTN!ABANDON": {
     "doc": "pm",
     "id": "APNTN",
     "word": "ABANDON"
   },
-  "!pm!APNTNMNT": {
+  "!pm#APNTNMNT!ABANDONMENT": {
     "doc": "pm",
     "id": "APNTNMNT",
     "word": "ABANDONMENT"
   },
-  "!pm!APNTNMNTS": {
+  "!pm#APNTNMNTS!ABANDONMENTS": {
     "doc": "pm",
     "id": "APNTNMNTS",
     "word": "ABANDONMENTS"
   },
-  "!pm!APNTNNK": {
+  "!pm#APNTNNK!ABANDONING": {
     "doc": "pm",
     "id": "APNTNNK",
     "word": "ABANDONING"
   },
-  "!pm!APNTNS": {
+  "!pm#APNTNS!ABANDONS": {
     "doc": "pm",
     "id": "APNTNS",
     "word": "ABANDONS"
   },
-  "!pm!APNTNT": {
+  "!pm#APNTNT!ABANDONED": {
     "doc": "pm",
     "id": "APNTNT",
     "word": "ABANDONED"
   },
-  "!pm!APP": {
+  "!pm#APP!ABABA": {
     "doc": "pm",
     "id": "APP",
     "word": "ABABA"
   },
-  "!pm!APR": {
+  "!pm#APR!ABAIR": {
+    "doc": "pm",
+    "id": "APR",
+    "word": "ABAIR"
+  },
+  "!pm#APR!ABARE": {
     "doc": "pm",
     "id": "APR",
     "word": "ABARE"
   },
-  "!pm!APRK": {
+  "!pm#APRK!AABERG": {
+    "doc": "pm",
+    "id": "APRK",
+    "word": "AABERG"
+  },
+  "!pm#APRK!ABARCA": {
     "doc": "pm",
     "id": "APRK",
     "word": "ABARCA"
   },
-  "!pm!APS": {
+  "!pm#APS!ABASIA": {
     "doc": "pm",
     "id": "APS",
     "word": "ABASIA"
   },
-  "!pm!APSKL": {
+  "!pm#APSKL!ABASCAL": {
     "doc": "pm",
     "id": "APSKL",
     "word": "ABASCAL"
   },
-  "!pm!APT": {
+  "!pm#APT!ABAD": {
+    "doc": "pm",
+    "id": "APT",
+    "word": "ABAD"
+  },
+  "!pm#APT!ABADI": {
+    "doc": "pm",
+    "id": "APT",
+    "word": "ABADI"
+  },
+  "!pm#APT!ABADIE": {
     "doc": "pm",
     "id": "APT",
     "word": "ABADIE"
   },
-  "!pm!APTK": {
+  "!pm#APTK!ABADAKA": {
     "doc": "pm",
     "id": "APTK",
     "word": "ABADAKA"
   },
-  "!pm!APX": {
+  "!pm#APX!ABASH": {
     "doc": "pm",
     "id": "APX",
     "word": "ABASH"
   },
-  "!pm!APXT": {
+  "!pm#APXT!ABASHED": {
     "doc": "pm",
     "id": "APXT",
     "word": "ABASHED"
   },
-  "!pm!ARN": {
+  "!pm#ARN!AARON": {
     "doc": "pm",
     "id": "ARN",
     "word": "AARON"
   },
-  "!pm!ARNS": {
+  "!pm#ARNS!AARONS": {
     "doc": "pm",
     "id": "ARNS",
     "word": "AARONS"
   },
-  "!pm!ARNSN": {
+  "!pm#ARNSN!AARONSON": {
     "doc": "pm",
     "id": "ARNSN",
     "word": "AARONSON"
   },
-  "!pm!ART": {
+  "!pm#ART!AARTI": {
     "doc": "pm",
     "id": "ART",
     "word": "AARTI"
   },
-  "!pm!ARTFRK": {
+  "!pm#ARTFRK!AARDVARK": {
     "doc": "pm",
     "id": "ARTFRK",
     "word": "AARDVARK"
   },
-  "!pm!ARTM": {
+  "!pm#ARTM!AARDEMA": {
     "doc": "pm",
     "id": "ARTM",
     "word": "AARDEMA"
   },
-  "!pm!AS": {
+  "!pm#AS!AASE": {
     "doc": "pm",
     "id": "AS",
     "word": "AASE"
   },
-  "!pm!ASN": {
+  "!pm#ASN!AASEN": {
     "doc": "pm",
     "id": "ASN",
     "word": "AASEN"
   },
-  "!pm!AXN": {
+  "!pm#AXN!AACHEN": {
     "doc": "pm",
     "id": "AXN",
     "word": "AACHEN"
   },
-  "!pm!AXNR": {
+  "!pm#AXNR!AACHENER": {
     "doc": "pm",
     "id": "AXNR",
     "word": "AACHENER"
   },
-  "!sm!A": {
+  "!sm#A!A": {
+    "doc": "sm",
+    "id": "A",
+    "word": "A"
+  },
+  "!sm#A!AAA": {
     "doc": "sm",
     "id": "A",
     "word": "AAA"
   },
-  "!sm!AKN": {
+  "!sm#AKN!AACHEN": {
     "doc": "sm",
     "id": "AKN",
     "word": "AACHEN"
   },
-  "!sm!AKNR": {
+  "!sm#AKNR!AACHENER": {
     "doc": "sm",
     "id": "AKNR",
     "word": "AACHENER"
   },
-  "!sm!AKR": {
+  "!sm#AKR!AAKER": {
     "doc": "sm",
     "id": "AKR",
     "word": "AAKER"
   },
-  "!sm!ALST": {
+  "!sm#ALST!AALSETH": {
     "doc": "sm",
     "id": "ALST",
     "word": "AALSETH"
   },
-  "!sm!AMT": {
+  "!sm#AMT!AAMODT": {
     "doc": "sm",
     "id": "AMT",
     "word": "AAMODT"
   },
-  "!sm!ANKR": {
+  "!sm#ANKR!AANCOR": {
     "doc": "sm",
     "id": "ANKR",
     "word": "AANCOR"
   },
-  "!sm!AP": {
+  "!sm#AP!AB": {
     "doc": "sm",
     "id": "AP",
     "word": "AB"
   },
-  "!sm!APK": {
+  "!sm#APK!ABACHA": {
+    "doc": "sm",
+    "id": "APK",
+    "word": "ABACHA"
+  },
+  "!sm#APK!ABACK": {
+    "doc": "sm",
+    "id": "APK",
+    "word": "ABACK"
+  },
+  "!sm#APK!ABACO": {
     "doc": "sm",
     "id": "APK",
     "word": "ABACO"
   },
-  "!sm!APKS": {
+  "!sm#APKS!ABACUS": {
     "doc": "sm",
     "id": "APKS",
     "word": "ABACUS"
   },
-  "!sm!APLKN": {
+  "!sm#APLKN!ABALKIN": {
     "doc": "sm",
     "id": "APLKN",
     "word": "ABALKIN"
   },
-  "!sm!APLN": {
+  "!sm#APLN!ABALONE": {
     "doc": "sm",
     "id": "APLN",
     "word": "ABALONE"
   },
-  "!sm!APLS": {
+  "!sm#APLS!ABALOS": {
     "doc": "sm",
     "id": "APLS",
     "word": "ABALOS"
   },
-  "!sm!APNT": {
+  "!sm#APNT!ABANTO": {
     "doc": "sm",
     "id": "APNT",
     "word": "ABANTO"
   },
-  "!sm!APNTN": {
+  "!sm#APNTN!ABANDON": {
     "doc": "sm",
     "id": "APNTN",
     "word": "ABANDON"
   },
-  "!sm!APNTNMNT": {
+  "!sm#APNTNMNT!ABANDONMENT": {
     "doc": "sm",
     "id": "APNTNMNT",
     "word": "ABANDONMENT"
   },
-  "!sm!APNTNMNTS": {
+  "!sm#APNTNMNTS!ABANDONMENTS": {
     "doc": "sm",
     "id": "APNTNMNTS",
     "word": "ABANDONMENTS"
   },
-  "!sm!APNTNNK": {
+  "!sm#APNTNNK!ABANDONING": {
     "doc": "sm",
     "id": "APNTNNK",
     "word": "ABANDONING"
   },
-  "!sm!APNTNS": {
+  "!sm#APNTNS!ABANDONS": {
     "doc": "sm",
     "id": "APNTNS",
     "word": "ABANDONS"
   },
-  "!sm!APNTNT": {
+  "!sm#APNTNT!ABANDONED": {
     "doc": "sm",
     "id": "APNTNT",
     "word": "ABANDONED"
   },
-  "!sm!APP": {
+  "!sm#APP!ABABA": {
     "doc": "sm",
     "id": "APP",
     "word": "ABABA"
   },
-  "!sm!APR": {
+  "!sm#APR!ABAIR": {
+    "doc": "sm",
+    "id": "APR",
+    "word": "ABAIR"
+  },
+  "!sm#APR!ABARE": {
     "doc": "sm",
     "id": "APR",
     "word": "ABARE"
   },
-  "!sm!APRK": {
+  "!sm#APRK!AABERG": {
+    "doc": "sm",
+    "id": "APRK",
+    "word": "AABERG"
+  },
+  "!sm#APRK!ABARCA": {
     "doc": "sm",
     "id": "APRK",
     "word": "ABARCA"
   },
-  "!sm!APSKL": {
+  "!sm#APSKL!ABASCAL": {
     "doc": "sm",
     "id": "APSKL",
     "word": "ABASCAL"
   },
-  "!sm!APT": {
+  "!sm#APT!ABAD": {
+    "doc": "sm",
+    "id": "APT",
+    "word": "ABAD"
+  },
+  "!sm#APT!ABADI": {
+    "doc": "sm",
+    "id": "APT",
+    "word": "ABADI"
+  },
+  "!sm#APT!ABADIE": {
     "doc": "sm",
     "id": "APT",
     "word": "ABADIE"
   },
-  "!sm!APTK": {
+  "!sm#APTK!ABADAKA": {
     "doc": "sm",
     "id": "APTK",
     "word": "ABADAKA"
   },
-  "!sm!APX": {
+  "!sm#APX!ABASH": {
+    "doc": "sm",
+    "id": "APX",
+    "word": "ABASH"
+  },
+  "!sm#APX!ABASIA": {
     "doc": "sm",
     "id": "APX",
     "word": "ABASIA"
   },
-  "!sm!APXT": {
+  "!sm#APXT!ABASHED": {
     "doc": "sm",
     "id": "APXT",
     "word": "ABASHED"
   },
-  "!sm!ARN": {
+  "!sm#ARN!AARON": {
     "doc": "sm",
     "id": "ARN",
     "word": "AARON"
   },
-  "!sm!ARNS": {
+  "!sm#ARNS!AARONS": {
     "doc": "sm",
     "id": "ARNS",
     "word": "AARONS"
   },
-  "!sm!ARNSN": {
+  "!sm#ARNSN!AARONSON": {
     "doc": "sm",
     "id": "ARNSN",
     "word": "AARONSON"
   },
-  "!sm!ART": {
+  "!sm#ART!AARTI": {
     "doc": "sm",
     "id": "ART",
     "word": "AARTI"
   },
-  "!sm!ARTFRK": {
+  "!sm#ARTFRK!AARDVARK": {
     "doc": "sm",
     "id": "ARTFRK",
     "word": "AARDVARK"
   },
-  "!sm!ARTM": {
+  "!sm#ARTM!AARDEMA": {
     "doc": "sm",
     "id": "ARTM",
     "word": "AARDEMA"
   },
-  "!sm!AS": {
+  "!sm#AS!AASE": {
     "doc": "sm",
     "id": "AS",
     "word": "AASE"
   },
-  "!sm!ASN": {
+  "!sm#ASN!AASEN": {
     "doc": "sm",
     "id": "ASN",
     "word": "AASEN"

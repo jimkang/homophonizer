@@ -1,4 +1,4 @@
-test:
+test: metaphone.db
 	mocha --ui tdd -R spec tests/basictests.js
 
 test-indexer:
@@ -7,7 +7,7 @@ test-indexer:
 test-indexer-debug:
 	mocha debug --ui tdd -R spec tests/basictests.js -g "index" -t 60000
 
-test-homophonizer:
+test-homophonizer: metaphone.db
 	mocha --ui tdd -R spec tests/basictests.js -g "homophones"
 
 metaphone.db:

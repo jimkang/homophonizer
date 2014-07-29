@@ -11,7 +11,6 @@ function setUpSubleveledDB(opts) {
   var smlevel = subleveldb.sublevel('sm');
 
   function closeDb(done) {
-    console.log('Closing...');
     subleveldb.close(function closeLevelDb() {
       leveldb.close(done);
     });

@@ -1,6 +1,7 @@
 var setUpSubleveledDb = require('./subleveleddb');
 var queue = require('queue-async');
 var path = require('path');
+var _ = require('lodash');
 
 var db;
 
@@ -9,7 +10,6 @@ function createHomophonizer(opts) {
   //  dbLocation: database file location
   
   var dbPath = path.resolve(__dirname, opts.dbLocation);
-  console.log(dbPath);
   var db = setUpSubleveledDb(opts);
 
   function getHomophones(word, done) {
@@ -18,22 +18,27 @@ function createHomophonizer(opts) {
     function lookupMetaphones(error, wordObject) {
       if (checkError(error, done)) {
         var q = queue();
-        // if (wordObject.primaryMetaphone) {
-          q.defer(db.primarymetaphones.get, wordObject.primaryMetaphone);
-        // }
+
+        var primaryLevel = db.primarymetaphones.sublevel(
+          wordObject.primaryMetaphone);
+
+        q.defer(readAllValuesFromSublevel, primaryLevel);
+
         if (wordObject.secondaryMetaphone) {
-          q.defer(db.secondarymetaphones.get, wordObject.secondaryMetaphone);
+          var secondaryLevel = db.secondarymetaphones.sublevel(
+            wordObject.secondaryMetaphone);
+          q.defer(readAllValuesFromSublevel, secondaryLevel);
         }
+
         q.await(function pickMetaphoneWords(error, primary, secondary) {
-            console.log(error, primary, secondary);
             done(error, {
-              primary: [primary.word],
-              secondary: [secondary.word]
+              primary: _.pluck(primary, 'word'),
+              secondary: _.pluck(secondary, 'word')
             });
-          } 
+          }
         );
       }
-    }    
+    }
   }
 
   function shutdown(done) {
@@ -43,6 +48,22 @@ function createHomophonizer(opts) {
     getHomophones: getHomophones,
     shutdown: shutdown
   };
+}
+
+function readAllValuesFromSublevel(sublevel, done) {
+  var values = [];
+  var valueStream = sublevel.createValueStream();
+  valueStream.on('data', function addValue(value) {
+    values.push(value);
+  });
+
+  function passBackValues(error) {
+    if (checkError(error)) {
+      done(error, values);
+    }
+  }
+
+  valueStream.on('close', passBackValues);//close);
 }
 
 function checkError(error, done) {

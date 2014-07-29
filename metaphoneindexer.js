@@ -16,7 +16,6 @@ function createIndexer(opts) {
 
     var metaphones = doublemetaphone(word);
     var q = queue();
-    // console.log(metaphones);
 
     // Index by word.
     q.defer(db.words.put, word, {
@@ -24,18 +23,25 @@ function createIndexer(opts) {
       primaryMetaphone: metaphones[0],
       secondaryMetaphone: metaphones[1]
     });
-    // Index by primary metaphone.
-    q.defer(db.primarymetaphones.put, metaphones[0], {
+    // Index by primary metaphone and word.
+    var primaryLevel = db.primarymetaphones.sublevel(metaphones[0]);
+
+    q.defer(primaryLevel.put, word, {
       doc: 'pm',
       id: metaphones[0],
       word: word
     });
+
     // Index by secondary metaphone.
-    q.defer(db.secondarymetaphones.put, metaphones[1], {
-      doc: 'sm',
-      id: metaphones[1],
-      word: word
-    });
+    if (metaphones[1]) {
+      var secondaryLevel = db.secondarymetaphones.sublevel(metaphones[1]);
+
+      q.defer(secondaryLevel.put, word, {
+        doc: 'sm',
+        id: metaphones[1],
+        word: word
+      });
+    }
 
     q.awaitAll(done);
   }
