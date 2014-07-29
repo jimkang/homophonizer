@@ -1,5 +1,5 @@
 var doublemetaphone = require('double-metaphone');
-var setUpSubleveledDb = require('./subleveleddb');
+var setUpSubleveledDb = require('../subleveleddb');
 var queue = require('queue-async');
 var dbsettings = require('./metaphone-db-settings');
 var _ = require('lodash');

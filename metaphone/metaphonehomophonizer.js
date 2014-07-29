@@ -1,4 +1,4 @@
-var setUpSubleveledDb = require('./subleveleddb');
+var setUpSubleveledDb = require('../subleveleddb');
 var queue = require('queue-async');
 var path = require('path');
 var _ = require('lodash');
