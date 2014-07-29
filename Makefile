@@ -16,6 +16,9 @@ test-metaphone-homophonizer: metaphone/metaphone.db
 test-phoneme-homophonizer: phoneme/phoneme.db
 	mocha --ui tdd -R spec tests/phonemetests.js -g "homophones"
 
+test-phoneme-navigator: phoneme/phoneme.db
+	mocha --ui tdd -R spec tests/phonemetests.js -g "navigator"
+
 metaphone/metaphone.db:
 	cd metaphone && node buildmetaphonedb.js cmudict.0.7a-words-only.txt metaphone.db
 

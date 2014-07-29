@@ -6,6 +6,7 @@ var idmaker = require('idmaker');
 var queue = require('queue-async');
 var level = require('level');
 var homophonizerFactory = require('../phoneme/phonemehomophonizer');
+var phonemeNavigator = require('../phoneme/phonemenavigator');
 
 require('approvals').mocha(__dirname + '/approvals');
 
@@ -124,6 +125,107 @@ suite('Find homophones', function findHomophonesSuite() {
     }
   );
 
+  // test('Verify that one-phoneme-shifted homophones can be found for cellar', 
+  //   function testPhonemeShiftByOne(testDone) {
+  //     homophonizer.getImperfectHomophones({
+  //         word: 'cellar',
+  //         numberOfPhonemesToVary: 1,
+  //         neighboringPhonemeDistance: 1
+  //       }, 
+  //       function checkHomophones(error, homophones) {
+  //         assert.ok(!error, error);
+  //         console.log(homophones);
+  //         assert.ok(homophones.indexOf('WALKE') !== -1);
+  //         testDone();
+  //       }
+  //     );
+  //   }
+  // );
+
+});
+
+suite('Phoneme navigator', function navigatorSuite() {
+  suite('Phoneme classifcation', function classificationSuite() {
+    function checkClassifyPhoneme(phoneme, expectedClassification) {
+      assert.equal(phonemeNavigator.classifyPhoneme(phoneme), 
+        expectedClassification
+      );
+    }
+
+    test('Verify that that phonemes are identified as vowels', 
+      function vowelTest() {
+        checkClassifyPhoneme('AA', 'vowel');
+        checkClassifyPhoneme('AE', 'vowel');
+        checkClassifyPhoneme('AH', 'vowel');
+        checkClassifyPhoneme('AO', 'vowel');
+        checkClassifyPhoneme('AW', 'vowel');
+        checkClassifyPhoneme('EY', 'vowel');
+        checkClassifyPhoneme('IY', 'vowel');
+        checkClassifyPhoneme('UH', 'vowel');
+        checkClassifyPhoneme('UW', 'vowel');
+      }
+    );
+
+    test('Verify that that phonemes are identified as affricates', 
+      function affricateTest() {
+        checkClassifyPhoneme('CH', 'affricate');
+        checkClassifyPhoneme('JH', 'affricate');
+      }
+    );
+
+    test('Verify that that phonemes are identified as aspirates', 
+      function aspirateTest() {
+        checkClassifyPhoneme('HH', 'aspirate');
+      }
+    );
+
+    test('Verify that that phonemes are identified as fricatives', 
+      function fricativeTest() {
+        checkClassifyPhoneme('DH', 'fricative');
+        checkClassifyPhoneme('F', 'fricative');
+        checkClassifyPhoneme('S', 'fricative');
+        checkClassifyPhoneme('SH', 'fricative');
+        checkClassifyPhoneme('TH', 'fricative');
+        checkClassifyPhoneme('V', 'fricative');
+        checkClassifyPhoneme('Z', 'fricative');
+        checkClassifyPhoneme('ZH', 'fricative');
+      }
+    );
+
+    test('Verify that that phonemes are identified as liquids', 
+      function liquidTest() {
+        checkClassifyPhoneme('L', 'liquid');
+        checkClassifyPhoneme('R', 'liquid');
+      }
+    );
+
+    test('Verify that that phonemes are identified as nasals', 
+      function nasalTest() {
+        checkClassifyPhoneme('M', 'nasal');
+        checkClassifyPhoneme('N', 'nasal');
+        checkClassifyPhoneme('NG', 'nasal');
+      }
+    );
+
+    test('Verify that that phonemes are identified as semivowels', 
+      function semivowelTest() {
+        checkClassifyPhoneme('W', 'semivowel');
+        checkClassifyPhoneme('Y', 'semivowel');
+      }
+    );
+
+    test('Verify that that phonemes are identified as stops', 
+      function stopTest() {
+        checkClassifyPhoneme('B', 'stop');
+        checkClassifyPhoneme('D', 'stop');
+        checkClassifyPhoneme('G', 'stop');
+        checkClassifyPhoneme('K', 'stop');
+        checkClassifyPhoneme('P', 'stop');
+        checkClassifyPhoneme('T', 'stop');
+      }
+    );
+
+  });
 });
 
 // http://www.geedew.com/2012/10/24/remove-a-directory-that-is-not-empty-in-nodejs/
