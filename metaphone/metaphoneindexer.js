@@ -1,5 +1,5 @@
 var doublemetaphone = require('double-metaphone');
-var setUpSubleveledDb = require('../subleveleddb');
+var subleveled = require('../subleveleddb');
 var queue = require('queue-async');
 var dbsettings = require('./metaphone-db-settings');
 var _ = require('lodash');
@@ -8,7 +8,7 @@ function createIndexer(opts) {
   // opts:
   //  dbLocation: database file location
 
-  var db = setUpSubleveledDb(_.defaults(opts, dbsettings));
+  var db = subleveled.setUpSubleveledDB(_.defaults(opts, dbsettings));
 
   function index(word, done) {
     if (!word || word.length < 1) {

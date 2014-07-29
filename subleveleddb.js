@@ -1,5 +1,6 @@
 var level = require('level');
 var sublevel = require('level-sublevel');
+var checks = require('./checks');
 
 function setUpSubleveledDB(opts) {
   // opts:
@@ -35,4 +36,24 @@ function setUpSubleveledDB(opts) {
   return db;
 }
 
-module.exports = setUpSubleveledDB;
+function readAllValuesFromSublevel(sublevel, done) {
+  var values = [];
+  var valueStream = sublevel.createValueStream();
+  valueStream.on('data', function addValue(value) {
+    values.push(value);
+  });
+
+  function passBackValues(error) {
+    if (checks.checkError(error)) {
+      done(error, values);
+    }
+  }
+
+  valueStream.on('close', passBackValues);
+}
+
+module.exports = {
+  setUpSubleveledDB: setUpSubleveledDB,
+  readAllValuesFromSublevel: readAllValuesFromSublevel
+};
+
