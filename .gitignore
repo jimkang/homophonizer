@@ -1,3 +1,5 @@
 .DS_Store
 node_modules
 metaphone/metaphone.db/*
+phoneme/phoneme.db/*
+tests/approvals/Index_phonemes_and_words.Verify_50_words_and_their_phonemes_are_indexed.received.txt
