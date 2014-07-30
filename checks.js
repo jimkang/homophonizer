@@ -7,18 +7,22 @@ function checkError(error, done) {
   return noError;
 }
 
-// Intended to be used with currying.
-function branchOnError(onFail, onSuccess, error) {
-  if (error) {
-    onFail(error);
-  }
-  else {
-    var args = Array.prototype.slice.call(arguments, 3);
-    onSuccess.apply(onSuccess, args);
-  }
+// opts must include onFail and onSuccess functions. onFail will be passed the 
+// error. onSuccess will be passed everything except the error.
+function createCallbackBranch(opts) {
+  return function branchOnError(error) {
+    if (error) {
+      opts.onFail(error);
+    }
+    else {
+      var args = Array.prototype.slice.call(arguments, 1);
+      opts.onSuccess.apply(opts.onSuccess, args);
+    }
+  };
 }
+
 
 module.exports = {
   checkError: checkError,
-  branchOnError: branchOnError
+  createCallbackBranch: createCallbackBranch
 };

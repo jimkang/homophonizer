@@ -25,61 +25,59 @@ function createHomophonizer(opts) {
   }
 
   function getImperfectHomophones(opts, done) {
-    var branch = _.curry(checks.branchOnError)(done, getPhonemeVariants);
+    db.words.get(opts.word.toUpperCase(), 
+      checks.createCallbackBranch({
+        onFail: done,
+        onSuccess: getPhonemeVariantStrings
+      })
+    );
 
-    db.words.get(opts.word.toUpperCase(), branch);
-    var variancePositions = opts.varianceAtPhonemePositions;
-
-    function getPhonemeVariants(phonemeString) {
+    function getPhonemeVariantStrings(phonemeString) {
       var phonemes = phonemeString.split(' ');
-      var newPhonemeStrings = [];
+      var phonemeVariantCombos = getPhonemeVariants(
+        phonemes, opts.varianceAtPhonemePositions
+      );
+      console.log(phonemeVariantCombos);
+      // TODO: Look up words for phoneme combos.
+    }    
+  }
 
-      var phonemeVariantGroups = phonemes.map(function getVariants(phoneme, i) {
-        if (variancePositions.indexOf(i) === -1) {
-          return [phoneme];
+  function getPhonemeVariants(phonemes, variancePositions) {
+    var newPhonemeStrings = [];
+
+    var phonemeVariantGroups = phonemes.map(function getVariants(phoneme, i) {
+      if (variancePositions.indexOf(i) === -1) {
+        return [phoneme];
+      }
+      else {
+        return phonemeNavigator.getPhonemesInSameClass(phoneme);
+      }
+    });
+
+    var phonemeCombos = phonemeVariantGroups.slice(1)
+      .reduce(crossArrays, phonemeVariantGroups[0]);
+
+    return phonemeCombos;
+  }
+
+  // Combines every element in A with every element in B.
+  function crossArrays(arrayA, arrayB) {
+    var combo = [];
+    arrayA.forEach(function combineElementWithArrayB(aElement) {
+      arrayB.forEach(function combineBElementWithAElement(bElement) {
+        if (Array.isArray(aElement) || Array.isArray(bElement)) {
+          combo.push(aElement.concat(bElement));
         }
         else {
-          return phonemeNavigator.getPhonemesInSameClass(phoneme);
+          combo.push([aElement, bElement]);
         }
       });
-
-      var phonemeCombos = phonemeVariantGroups.slice(1)
-        .reduce(crossArrays, phonemeVariantGroups[0]);
-      console.log(phonemeCombos);
-
-      // TODO: Look up words for phoneme combos.
-    }
-
-    // Combines every element in A with every element in B.
-    function crossArrays(arrayA, arrayB) {
-      var combo = [];
-      arrayA.forEach(function combineElementWithArrayB(aElement) {
-        arrayB.forEach(function combineBElementWithAElement(bElement) {
-          if (Array.isArray(aElement) || Array.isArray(bElement)) {
-            combo.push(aElement.concat(bElement));
-          }
-          else {
-            combo.push([aElement, bElement]);
-          }
-        });
-      });
-      return combo;
-    }
-
-    function getPhonemeCombinationsFromVariantGroups(phonemeVariantGroups) {
-      var mostVariantsInAnyGroup = _.max(phonemeVariantGroups, count);
-
-      for (var i = 0; i < phonemeVariantGroups.length; ++i) {
-        var phonemeVariantGroup = phonemeVariantGroups[i];
-        for (var j = 1; j < phonemeVariantGroups.length; ++j) {
-
-        }
-      }
-    }
-    
-    function count(array) { 
-      return array.length;
-    }
+    });
+    return combo;
+  }
+  
+  function count(array) { 
+    return array.length;
   }
 
   function shutdown(done) {
