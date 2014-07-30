@@ -125,22 +125,21 @@ suite('Find homophones', function findHomophonesSuite() {
     }
   );
 
-  // test('Verify that one-phoneme-shifted homophones can be found for cellar', 
-  //   function testPhonemeShiftByOne(testDone) {
-  //     homophonizer.getImperfectHomophones({
-  //         word: 'cellar',
-  //         numberOfPhonemesToVary: 1,
-  //         neighboringPhonemeDistance: 1
-  //       }, 
-  //       function checkHomophones(error, homophones) {
-  //         assert.ok(!error, error);
-  //         console.log(homophones);
-  //         assert.ok(homophones.indexOf('WALKE') !== -1);
-  //         testDone();
-  //       }
-  //     );
-  //   }
-  // );
+  test('Verify that one-phoneme-altered homophones can be found for cellar', 
+    function testPhonemeFirstPhonemeSwapped(testDone) {
+      homophonizer.getImperfectHomophones({
+          word: 'cellar',
+          varianceAtPhonemePositions: [0]
+        }, 
+        function checkHomophones(error, homophones) {
+          assert.ok(!error, error);
+          console.log(homophones);
+          assert.ok(homophones.indexOf('WALKE') !== -1);
+          testDone();
+        }
+      );
+    }
+  );
 
 });
 
