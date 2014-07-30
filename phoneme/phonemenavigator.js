@@ -115,7 +115,12 @@ function getPhonemesInSameClass(phoneme) {
   return fellows;
 }
 
+function stripStressor(phonemeWithStressor) {
+  return phonemeWithStressor.replace(/\d/g, '');
+}
+
 module.exports = {
   classifyPhoneme: classifyPhoneme,
+  stripStressor: stripStressor,
   getPhonemesInSameClass: getPhonemesInSameClass
 };
