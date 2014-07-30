@@ -25,7 +25,8 @@ function createHomophonizer(opts) {
   }
 
   function getImperfectHomophones(opts, done) {
-    db.words.get(opts.word.toUpperCase(), 
+    db.words.get(
+      opts.word.toUpperCase(), 
       checks.createCallbackBranch({
         onFail: done,
         onSuccess: getPhonemeVariantStrings
@@ -34,11 +35,21 @@ function createHomophonizer(opts) {
 
     function getPhonemeVariantStrings(phonemeString) {
       var phonemes = phonemeString.split(' ');
+      if (!phonemes || phonemes.length < 1) {
+        done(null, []);
+      }
+
+      phonemes = phonemes.map(phonemeNavigator.stripStressor);
+
       var phonemeVariantCombos = getPhonemeVariants(
         phonemes, opts.varianceAtPhonemePositions
       );
-      console.log(phonemeVariantCombos);
+
+      var comboStrings = phonemeVariantCombos.map(function glueEm(phonemes) {
+        return phonemes.join(' ');
+      });
       // TODO: Look up words for phoneme combos.
+      done(null, comboStrings);
     }    
   }
 
@@ -85,6 +96,8 @@ function createHomophonizer(opts) {
   }
   return {
     getHomophones: getHomophones,
+    crossArrays: crossArrays,
+    getPhonemeVariants: getPhonemeVariants,
     getImperfectHomophones: getImperfectHomophones,
     shutdown: shutdown
   };
