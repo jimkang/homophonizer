@@ -2,6 +2,7 @@ var queue = require('queue-async');
 var setUpSubleveledDB = require('../subleveleddb').setUpSubleveledDB;
 var dbsettings = require('./phoneme-db-settings');
 var _ = require('lodash');
+var phonemenavigator = require('./phonemenavigator');
 
 function createIndexer(opts) {
   // opts:
@@ -10,6 +11,7 @@ function createIndexer(opts) {
   var db = setUpSubleveledDB(_.defaults(opts, dbsettings));
 
   function index(word, phonemeString, done) {
+    phonemeString = phonemenavigator.stripStressor(phonemeString);
     validateStringArgument(word, 'word', done);
     validateStringArgument(phonemeString, 'phonemeString', done);
 
