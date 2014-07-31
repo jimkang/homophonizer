@@ -106,6 +106,10 @@ function createHomophonizer(opts) {
     q.awaitAll(done);
   }
 
+  function getPhonemesInWord(word, done) {
+    db.words.get(word.toUpperCase(), done);    
+  }
+
   function filterEmptyArrays(arrayOfArrays) {
     return arrayOfArrays.filter(function isNotEmpty(array) {
       return Array.isArray(array) && array.length > 0;
@@ -124,7 +128,8 @@ function createHomophonizer(opts) {
     crossArrays: crossArrays,
     getPhonemeVariants: getPhonemeVariants,
     getImperfectHomophones: getImperfectHomophones,
-    shutdown: shutdown
+    shutdown: shutdown,
+    getPhonemesInWord: getPhonemesInWord
   };
 }
 

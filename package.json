@@ -24,7 +24,8 @@
     "mocha": "~1.18.2",
     "idmaker": "~0.1.1",
     "approvals": "0.0.19",
-    "level": "~0.18.0"
+    "level": "~0.18.0",
+    "probable": "~0.1.0"
   },
   "dependencies": {
     "double-metaphone": "~0.1.0",
