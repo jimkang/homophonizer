@@ -192,8 +192,9 @@ suite('Find homophones', function findHomophonesSuite() {
         }, 
         function checkHomophones(error, homophones) {
           assert.ok(!error, error);
-          console.log(homophones);
-          assert.ok(homophones.indexOf('WALKE') !== -1);
+          assert.deepEqual(homophones, [
+            'FELLER', 'SHELLER', 'SHELOR', 'ZELLER'
+          ]);
           testDone();
         }
       );

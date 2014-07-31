@@ -7,6 +7,7 @@ function checkError(error, done) {
   return noError;
 }
 
+// TODO: This should be in its own module.
 // opts must include onFail and onSuccess functions. onFail will be passed the 
 // error. onSuccess will be passed everything except the error.
 function createCallbackBranch(opts) {

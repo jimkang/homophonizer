@@ -4,6 +4,7 @@ var dbsettings = require('./phoneme-db-settings');
 var _ = require('lodash');
 var checks = require('../checks');
 var phonemeNavigator = require('./phonemeNavigator');
+var queue = require('queue-async');
 
 var db;
 
@@ -48,9 +49,16 @@ function createHomophonizer(opts) {
       var comboStrings = phonemeVariantCombos.map(function glueEm(phonemes) {
         return phonemes.join(' ');
       });
-      // TODO: Look up words for phoneme combos.
-      done(null, comboStrings);
-    }    
+
+      lookUpWordsForPhonemes(comboStrings,         
+        checks.createCallbackBranch({
+          onFail: done,
+          onSuccess: function cleanAndPassback(wordLists) {
+            done(null, _.flatten(filterEmptyArrays(wordLists)));
+          } 
+        })
+      );
+    }
   }
 
   function getPhonemeVariants(phonemes, variancePositions) {
@@ -85,6 +93,23 @@ function createHomophonizer(opts) {
       });
     });
     return combo;
+  }
+
+  function lookUpWordsForPhonemes(phonemeStrings, done) {
+    var q = queue();
+
+    phonemeStrings.forEach(function addPhonemeLookup(phonemesString) {
+      var phonemeLevel = db.phonemes.sublevel(phonemesString);
+      q.defer(subleveled.readAllValuesFromSublevel, phonemeLevel);
+    });
+
+    q.awaitAll(done);
+  }
+
+  function filterEmptyArrays(arrayOfArrays) {
+    return arrayOfArrays.filter(function isNotEmpty(array) {
+      return Array.isArray(array) && array.length > 0;
+    });
   }
   
   function count(array) { 
