@@ -54,7 +54,13 @@ function createHomophonizer(opts) {
         checks.createCallbackBranch({
           onFail: done,
           onSuccess: function cleanAndPassback(wordLists) {
-            done(null, _.flatten(filterEmptyArrays(wordLists)));
+            var cleanedUpLists = _.flatten(filterEmptyArrays(wordLists));
+            // Hide stuff like '(1)' in 'HOUR(1)'.
+            var cleanedUpLists = cleanedUpLists.map(function stripParens(word) {
+              return word.replace(/\(\d\)/, '');
+            });
+
+            done(null, cleanedUpLists);
           } 
         })
       );
