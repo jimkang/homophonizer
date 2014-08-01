@@ -17,16 +17,8 @@ if (word.length > 0) {
       }
       else {
         var phonemes = phonemeString.split(' ');
-        // if (phonemes.length > 2) {
-        //   // Randomly pick a middle position to vary.          
-        //   varyAtPositions.push(probable.roll(phonemes.length - 2) + 1);
-        // }
-        // else {
-          // varyAtPositions.push(probable.roll(phonemes.length));
-        // }
         varyAtPositions = phonemes.map(function getPosition(ph, i) { return i; });
-        varyAtPositions = varyAtPositions.slice(0, 4);
-        console.log('varyAtPositions', varyAtPositions);
+        // console.log('varyAtPositions', varyAtPositions);
         homophonizer.getImperfectHomophones({
           word: word,
           varianceAtPhonemePositions: varyAtPositions
