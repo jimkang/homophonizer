@@ -42,7 +42,7 @@ function createHomophonizer(opts) {
 
       phonemes = phonemes.map(phonemeNavigator.stripStressor);
 
-      var phonemeVariantCombos = getPhonemeVariants(
+      var phonemeVariantCombos = getSimplePhonemeVariants(
         phonemes, opts.varianceAtPhonemePositions
       );
 
@@ -61,7 +61,34 @@ function createHomophonizer(opts) {
     }
   }
 
-  function getPhonemeVariants(phonemes, variancePositions) {
+  function getSimplePhonemeVariants(phonemeSequence, variancePositions) {
+    var results = [];
+
+    phonemeSequence.forEach(getVariants);
+
+    function getVariants(phoneme, positionInSequence) {
+      var shouldVary = (variancePositions.indexOf(positionInSequence) !== -1);
+
+      if (shouldVary) {
+        var variants = phonemeNavigator.getPhonemesInSameClass(phoneme);
+        var putVariantInSeq = _.curry(putVariantInSequence)(
+          phonemeSequence, positionInSequence
+        );
+        var sequencesWithVariants = variants.map(putVariantInSeq);
+        results = results.concat(sequencesWithVariants);
+      }
+    }
+
+    return results;
+  }
+
+  function putVariantInSequence(originalSequence, sequencePosition, variant) {
+    var sequenceWithVariant = originalSequence.slice();
+    sequenceWithVariant[sequencePosition] = variant;
+    return sequenceWithVariant;
+  }
+
+  function getAllPhonemeVariantCombinations(phonemes, variancePositions) {
     var newPhonemeStrings = [];
 
     var phonemeVariantGroups = phonemes.map(function getVariants(phoneme, i) {
@@ -73,8 +100,10 @@ function createHomophonizer(opts) {
       }
     });
 
-    var phonemeCombos = phonemeVariantGroups.slice(1)
-      .reduce(crossArrays, phonemeVariantGroups[0]);
+    var nonEmptyGroups = filterEmptyArrays(phonemeVariantGroups);
+
+    var phonemeCombos = nonEmptyGroups.slice(1)
+      .reduce(crossArrays, nonEmptyGroups[0]);
 
     return phonemeCombos;
   }
@@ -126,7 +155,8 @@ function createHomophonizer(opts) {
   return {
     getHomophones: getHomophones,
     crossArrays: crossArrays,
-    getPhonemeVariants: getPhonemeVariants,
+    getSimplePhonemeVariants: getSimplePhonemeVariants,
+    getAllPhonemeVariantCombinations: getAllPhonemeVariantCombinations,
     getImperfectHomophones: getImperfectHomophones,
     shutdown: shutdown,
     getPhonemesInWord: getPhonemesInWord
