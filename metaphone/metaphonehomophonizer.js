@@ -10,7 +10,9 @@ var db;
 function createHomophonizer(opts) {
   // opts:
   //  dbLocation: database file location
-  // var dbPath = path.resolve(__dirname, opts.dbLocation);
+  opts = _.defaults(opts ? opts : {}, {
+    dbLocation: 'metaphone/metaphone.db'
+  });
   var db = subleveled.setUpSubleveledDB(_.defaults(opts, dbsettings));
 
   function getHomophones(word, done) {

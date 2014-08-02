@@ -11,6 +11,9 @@ var db;
 function createHomophonizer(opts) {
   // opts:
   //  dbLocation: database file location
+  opts = _.defaults(opts ? opts : {}, {
+    dbLocation: 'phoneme/phoneme.db'
+  });
   var dbPath = path.resolve(__dirname, opts.dbLocation);
   var db = subleveled.setUpSubleveledDB(_.defaults(opts, dbsettings));
 
