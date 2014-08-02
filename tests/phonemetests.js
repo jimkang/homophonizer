@@ -236,7 +236,6 @@ suite('Find homophones', function findHomophonesSuite() {
         }, 
         function checkHomophones(error, homophones) {
           assert.ok(!error, error);
-          console.log(homophones);
           assert.deepEqual(homophones, 
             ['SPANNER', 'SKINNER', 'SCHOONER', 'SCAMMER']
           );
