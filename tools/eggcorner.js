@@ -54,7 +54,7 @@ function getPhonemeHomophonesForWord(word, done) {
 
         phonemeHomophonizer.getImperfectHomophones({
           word: word,
-          varianceAtPhonemePositions: varyAtPositions
+          varyPhonemesAtPositions: varyAtPositions
         },
         done);
       }

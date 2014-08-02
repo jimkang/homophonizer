@@ -21,7 +21,7 @@ if (word.length > 0) {
         // console.log('varyAtPositions', varyAtPositions);
         homophonizer.getImperfectHomophones({
           word: word,
-          varianceAtPhonemePositions: varyAtPositions
+          varyPhonemesAtPositions: varyAtPositions
         },
         showHomophones);
       }

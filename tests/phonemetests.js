@@ -215,7 +215,7 @@ suite('Find homophones', function findHomophonesSuite() {
     function testPhonemeFirstPhonemeSwapped(testDone) {
       homophonizer.getImperfectHomophones({
           word: 'cellar',
-          varianceAtPhonemePositions: [0]
+          varyPhonemesAtPositions: [0]
         }, 
         function checkHomophones(error, homophones) {
           assert.ok(!error, error);
@@ -232,7 +232,7 @@ suite('Find homophones', function findHomophonesSuite() {
     function testPhonemeAllPhonemesSwapped(testDone) {
       homophonizer.getImperfectHomophones({
           word: 'scanner',
-          varianceAtPhonemePositions: [0, 1, 2, 3, 4]
+          varyPhonemesAtPositions: [0, 1, 2, 3, 4]
         }, 
         function checkHomophones(error, homophones) {
           assert.ok(!error, error);

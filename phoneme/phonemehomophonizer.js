@@ -43,7 +43,7 @@ function createHomophonizer(opts) {
       phonemes = phonemes.map(phonemeNavigator.stripStressor);
 
       var phonemeVariantCombos = getSimplePhonemeVariants(
-        phonemes, opts.varianceAtPhonemePositions
+        phonemes, opts.varyPhonemesAtPositions
       );
 
       var comboStrings = phonemeVariantCombos.map(function glueEm(phonemes) {
