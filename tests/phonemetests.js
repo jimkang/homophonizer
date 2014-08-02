@@ -8,7 +8,9 @@ var level = require('level');
 var homophonizerFactory = require('../phoneme/phonemehomophonizer');
 var phonemeNavigator = require('../phoneme/phonemeNavigator');
 
-require('approvals').mocha(__dirname + '/approvals');
+require('approvals')
+  .configure({errorOnStaleApprovedFiles: false})
+  .mocha(__dirname + '/approvals');
 
 suite('Index phonemes and words', function indexSuite() {
   var numberOfWordsToIndex = 100;

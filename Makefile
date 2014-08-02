@@ -1,5 +1,7 @@
-test: metaphone/metaphone.db
-	mocha --ui tdd -R spec tests/basictests.js
+test: test-metaphone test-phoneme
+
+test-metaphone: metaphone/metaphone.db
+	mocha --ui tdd -R spec tests/metaphonetests.js
 
 test-phoneme: phoneme/phoneme.db
 	mocha --ui tdd -R spec tests/phonemetests.js
@@ -15,6 +17,9 @@ test-metaphone-homophonizer: metaphone/metaphone.db
 
 test-phoneme-homophonizer: phoneme/phoneme.db
 	mocha --ui tdd -R spec tests/phonemetests.js -g "homophones"
+
+test-phoneme-homophonizer-debug: phoneme/phoneme.db
+	mocha debug --ui tdd -R spec tests/phonemetests.js -g "scanner"
 
 test-phoneme-navigator: phoneme/phoneme.db
 	mocha --ui tdd -R spec tests/phonemetests.js -g "navigator"
