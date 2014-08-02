@@ -1,12 +1,6 @@
 var assert = require('assert');
 var hph = require('../index');
-// var split = require('split');
-// var fs = require('fs');
 var idmaker = require('idmaker');
-// var queue = require('queue-async');
-// var level = require('level');
-// var homophonizerFactory = require('../phoneme/phonemehomophonizer');
-// var phonemeNavigator = require('../phoneme/phonemeNavigator');
 
 suite('Phoneme "sub" module', function phonemeSuite() {
   var homophonizer;
