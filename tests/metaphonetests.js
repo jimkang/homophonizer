@@ -7,8 +7,9 @@ var queue = require('queue-async');
 var level = require('level');
 var homophonizerFactory = require('../metaphone/metaphonehomophonizer');
 
-require('approvals').mocha(__dirname + '/approvals');
-
+require('approvals')
+  .configure({errorOnStaleApprovedFiles: false})
+  .mocha(__dirname + '/approvals');
 
 suite('Index metaphones and words', function indexSuite() {
   var numberOfWordsToIndex = 50;
