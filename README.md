@@ -5,7 +5,7 @@ This module finds [homophones](http://en.wikipedia.org/wiki/Homophone) for words
 
     var hph = require('homophonizer');
     var homophonizer = hph.metaphone.createHomophonizer();
-    homophonizer.getHomophones('acorn' function done(error, results) {
+    homophonizer.getHomophones('acorn', function done(error, results) {
       // Error handling goes here.
       console.log(results);
     });
@@ -34,6 +34,16 @@ Results:
         'UKRAINE'
       ]
     }
+
+
+Installation
+------------
+
+    npm install homophonizer
+    cd node_modules/homophonizer
+    make builddbs
+
+That last step is important. There will be nothing in the databases in the it searches without it.
 
 Metaphone and phonemes
 ----------------------
@@ -84,16 +94,6 @@ Results:
       'SCHULL',
       'SCHUELE'
     ]
-
-
-Installation
-------------
-
-    npm install homophonizer
-    cd node_modules/homophonizer
-    make builddbs
-
-That last step is important. There will be nothing in the databases in the it searches without it.
 
 API
 ---
