@@ -5,17 +5,15 @@ var _ = require('lodash');
 var checks = require('../checks');
 var phonemeNavigator = require('./phonemeNavigator');
 var queue = require('queue-async');
+var path = require('path');
 
 var db;
 
-function createHomophonizer(opts) {
-  // opts:
-  //  dbLocation: database file location
-  opts = _.defaults(opts ? opts : {}, {
-    dbLocation: 'phoneme/phoneme.db'
-  });
-  var dbPath = path.resolve(__dirname, opts.dbLocation);
-  var db = subleveled.setUpSubleveledDB(_.defaults(opts, dbsettings));
+function createHomophonizer() {
+  var dir = path.dirname(module.filename);
+  var dbPath = path.resolve(dir + '/phoneme.db');
+  var opts = _.defaults({dbLocation: dbPath}, dbsettings);
+  var db = subleveled.setUpSubleveledDB(opts);
 
   function getHomophones(word, done) {
     db.words.get(word.toUpperCase(), lookupWordsForPhoneme);

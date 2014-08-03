@@ -4,16 +4,15 @@ var path = require('path');
 var _ = require('lodash');
 var dbsettings = require('./metaphone-db-settings');
 var checks = require('../checks');
+var path = require('path');
 
 var db;
 
 function createHomophonizer(opts) {
-  // opts:
-  //  dbLocation: database file location
-  opts = _.defaults(opts ? opts : {}, {
-    dbLocation: 'metaphone/metaphone.db'
-  });
-  var db = subleveled.setUpSubleveledDB(_.defaults(opts, dbsettings));
+  var dir = path.dirname(module.filename);
+  var dbPath = path.resolve(dir + '/metaphone.db');
+  var opts = _.defaults({dbLocation: dbPath}, dbsettings);
+  var db = subleveled.setUpSubleveledDB(opts);
 
   function getHomophones(word, done) {
     db.words.get(word.toUpperCase(), lookupMetaphones);
