@@ -29,7 +29,6 @@
   },
   "dependencies": {
     "double-metaphone": "~0.1.0",
-    "doublemetaphone": "~0.1.2",
     "split": "~0.3.0",
     "queue-async": "~1.0.7",
     "level-sublevel": "~6.1.6",
