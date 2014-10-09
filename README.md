@@ -40,6 +40,10 @@ Installation
 ------------
 
     npm install homophonizer
+
+
+If you need to rebuild the metaphone and phoneme databases:
+
     cd node_modules/homophonizer
     make builddbs
 
