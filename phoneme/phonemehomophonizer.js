@@ -3,7 +3,7 @@ var path = require('path');
 var dbsettings = require('./phoneme-db-settings');
 var _ = require('lodash');
 var checks = require('../checks');
-var phonemeNavigator = require('./phonemeNavigator');
+var phonemeNavigator = require('./phonemenavigator');
 var queue = require('queue-async');
 var path = require('path');
 
