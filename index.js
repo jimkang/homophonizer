@@ -1,6 +1,6 @@
 var createMetaphoneHomophonizer = require('./metaphone/metaphonehomophonizer');
 var createPhonemeHomophonizer = require('./phoneme/phonemehomophonizer');
-var phonemeNavigator = require('./phoneme/phonemeNavigator');
+var phonemeNavigator = require('./phoneme/phonemenavigator');
 
 module.exports = {
   phoneme: {
