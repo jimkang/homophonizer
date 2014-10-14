@@ -8,7 +8,7 @@ test-index: metaphone/metaphone.db phoneme/phoneme.db
 test-metaphone: metaphone/metaphone.db
 	$(MOCHACMD) tests/metaphonetests.js
 
-test-phoneme: phoneme/phoneme.db
+test-phoneme: test-phoneme-homophonizer test-phoneme-navigator
 	$(MOCHACMD) tests/phonemetests.js
 
 test-metaphone-indexer:
@@ -21,13 +21,13 @@ test-metaphone-homophonizer: metaphone/metaphone.db
 	$(MOCHACMD) tests/basictests.js -g "homophones"
 
 test-phoneme-homophonizer: phoneme/phoneme.db
-	$(MOCHACMD) tests/phonemetests.js -g "homophones"
+	$(MOCHACMD) tests/phoneme-homophones-tests.js
 
 test-phoneme-homophonizer-debug: phoneme/phoneme.db
 	mocha debug --ui tdd -R spec tests/phonemetests.js -g "scanner"
 
 test-phoneme-navigator: phoneme/phoneme.db
-	$(MOCHACMD) tests/phonemetests.js -g "navigator"
+	$(MOCHACMD) tests/phoneme-navigator-tests.js
 
 metaphone/metaphone.db:
 	cd metaphone && node buildmetaphonedb.js cmudict.0.7a-words-only.txt metaphone.db
@@ -38,6 +38,6 @@ phoneme/phoneme.db:
 builddbs: metaphone/metaphone.db phoneme/phoneme.db
 
 lookup:
-	@cd tools && echo "Metaphone-based:" && node lookup-metaphone-homophones.js $(WORD)
+	# @cd tools && echo "Metaphone-based:" && node lookup-metaphone-homophones.js $(WORD)
 	@cd tools && echo "Phoneme-based:" && node lookup-phoneme-homophones.js $(WORD) --imperfect
 

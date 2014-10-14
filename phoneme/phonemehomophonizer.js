@@ -68,6 +68,26 @@ function createHomophonizer() {
     }
   }
 
+  function getPhonemeClassesForWord(opts, done) {
+    db.words.get(
+      opts.word.toUpperCase(), 
+      checks.createCallbackBranch({
+        onFail: done,
+        onSuccess: classifyPhonemes
+      })
+    );
+
+    function classifyPhonemes(phonemeString) {
+      var phonemes = phonemeString.split(' ');
+      if (!phonemes || phonemes.length < 1) {
+        done(null, []);
+      }
+
+      phonemes = phonemes.map(phonemeNavigator.stripStressor);
+      done(null, phonemes.map(phonemeNavigator.classifyPhoneme));
+    }
+  }
+
   function getSimplePhonemeVariants(phonemeSequence, variancePositions) {
     var results = [];
 
@@ -166,7 +186,8 @@ function createHomophonizer() {
     getAllPhonemeVariantCombinations: getAllPhonemeVariantCombinations,
     getImperfectHomophones: getImperfectHomophones,
     shutdown: shutdown,
-    getPhonemesInWord: getPhonemesInWord
+    getPhonemesInWord: getPhonemesInWord,
+    getPhonemeClassesForWord: getPhonemeClassesForWord
   };
 }
 
