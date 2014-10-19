@@ -6,6 +6,7 @@ var checks = require('../checks');
 var phonemeNavigator = require('./phonemenavigator');
 var queue = require('queue-async');
 var path = require('path');
+var probable = require('probable');
 
 var db;
 
@@ -129,26 +130,7 @@ function createHomophonizer() {
 
     var nonEmptyGroups = filterEmptyArrays(phonemeVariantGroups);
 
-    var phonemeCombos = nonEmptyGroups.slice(1)
-      .reduce(crossArrays, nonEmptyGroups[0]);
-
-    return phonemeCombos;
-  }
-
-  // Combines every element in A with every element in B.
-  function crossArrays(arrayA, arrayB) {
-    var combo = [];
-    arrayA.forEach(function combineElementWithArrayB(aElement) {
-      arrayB.forEach(function combineBElementWithAElement(bElement) {
-        if (Array.isArray(aElement) || Array.isArray(bElement)) {
-          combo.push(aElement.concat(bElement));
-        }
-        else {
-          combo.push([aElement, bElement]);
-        }
-      });
-    });
-    return combo;
+    return probable.getCartesianProduct(nonEmptyGroups);
   }
 
   function lookUpWordsForPhonemes(phonemeStrings, done) {
@@ -181,7 +163,6 @@ function createHomophonizer() {
   }
   return {
     getHomophones: getHomophones,
-    crossArrays: crossArrays,
     getSimplePhonemeVariants: getSimplePhonemeVariants,
     getAllPhonemeVariantCombinations: getAllPhonemeVariantCombinations,
     getImperfectHomophones: getImperfectHomophones,

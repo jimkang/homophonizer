@@ -52,45 +52,6 @@ suite('Find homophones', function findHomophonesSuite() {
     }
   );
 
-  test('Verify that crossArrays generates all permutations of two arrays', 
-    function testCrossArrays() {
-      assert.deepEqual(
-        homophonizer.crossArrays(['a', 'b', 'c'], [1, 2, 3, 4]),
-        [
-          [ 'a', 1 ],
-          [ 'a', 2 ],
-          [ 'a', 3 ],
-          [ 'a', 4 ],
-          [ 'b', 1 ],
-          [ 'b', 2 ],
-          [ 'b', 3 ],
-          [ 'b', 4 ],
-          [ 'c', 1 ],
-          [ 'c', 2 ],
-          [ 'c', 3 ],
-          [ 'c', 4 ]
-        ]
-      );
-    }
-  );
-
-  test('Verify that crossArrays generates all permutations of four arrays', 
-    function testCrossArrays() {
-      var arrays = [
-        ['a', 'b', 'c'], 
-        [1, 2, 3, 4],
-        ['x'],
-        ['ß', '∑', '∂', '¢']
-      ];
-
-      var combos = arrays.slice(1).reduce(homophonizer.crossArrays, arrays[0]);
-      assert.equal(combos.length, 
-        arrays[0].length * arrays[1].length * arrays[2].length * arrays[3].length 
-      );
-    }
-  );
-
-
   test('Verify that simple variants of a phoneme sequence can be found for cellar',
     function testSimplePhonemeVariants() {
       var sequence = ['S', 'EH', 'L', 'ER'];
@@ -111,7 +72,6 @@ suite('Find homophones', function findHomophonesSuite() {
       assert.equal(variants.length, numberOfPossibilities);
     }
   );
-
 
   test('Verify that variants of a phoneme sequence can be found for obsequious',
     function testPhonemeVariants() {

@@ -24,16 +24,15 @@
   "devDependencies": {
     "mocha": "~1.18.2",
     "idmaker": "~0.1.1",
-    "approvals": "0.0.19",
-    "level": "~0.18.0",
-    "probable": "~0.1.0"
+    "approvals": "0.0.19"
   },
   "dependencies": {
     "double-metaphone": "~0.1.0",
-    "split": "~0.3.0",
-    "queue-async": "~1.0.7",
-    "level-sublevel": "~6.1.6",
     "level": "~0.18.0",
-    "lodash": "~2.4.1"
+    "level-sublevel": "~6.1.6",
+    "lodash": "~2.4.1",
+    "probable": "^1.0.0",
+    "queue-async": "~1.0.7",
+    "split": "~0.3.0"
   }
 }
