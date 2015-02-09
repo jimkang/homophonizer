@@ -1,6 +1,6 @@
 var assert = require('assert');
 var homophonizerFactory = require('../phoneme/phonemehomophonizer');
-var phonemeNavigator = require('../phoneme/phonemeNavigator');
+var phonemeTypes = require('phoneme-types');
 
 // Requires a full phoneme DB to be built.
 suite('Find homophones', function findHomophonesSuite() {
@@ -63,7 +63,7 @@ suite('Find homophones', function findHomophonesSuite() {
       var numberOfPossibilities = positionsToVary.reduce(
         function addPhonemesInSameClass(sum, position) {
           var phoneme = sequence[position];
-          var permutationsForPosition = phonemeNavigator
+          var permutationsForPosition = phonemeTypes
             .getPhonemesInSameClass(phoneme).length;
           return permutationsForPosition + sum;
         },
@@ -76,7 +76,7 @@ suite('Find homophones', function findHomophonesSuite() {
   test('Verify that variants of a phoneme sequence can be found for obsequious',
     function testPhonemeVariants() {
       var sequence = ['AH0', 'B', 'S', 'IY1', 'K', 'W', 'IY0', 'AH0', 'S'].map(
-          phonemeNavigator.stripStressor
+          phonemeTypes.stripStressor
         );
       var positionsToVary = [0, 4, 5, 8];
       var variants = homophonizer.getAllPhonemeVariantCombinations(
@@ -86,7 +86,7 @@ suite('Find homophones', function findHomophonesSuite() {
       var numberOfPossibilities = positionsToVary.reduce(
         function multiplyByPhonemesInSameClass(product, position) {
           var phoneme = sequence[position];
-          var permutationsForPosition = phonemeNavigator
+          var permutationsForPosition = phonemeTypes
             .getPhonemesInSameClass(phoneme).length;
           return permutationsForPosition * product;
         },

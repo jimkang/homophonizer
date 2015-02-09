@@ -33,6 +33,7 @@
     "lodash": "~2.4.1",
     "probable": "^1.0.0",
     "queue-async": "~1.0.7",
-    "split": "~0.3.0"
+    "split": "~0.3.0",
+    "phoneme-types": "~1.1.1"
   }
 }

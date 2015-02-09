@@ -3,7 +3,7 @@ var path = require('path');
 var dbsettings = require('./phoneme-db-settings');
 var _ = require('lodash');
 var checks = require('../checks');
-var phonemeNavigator = require('./phonemenavigator');
+var phonemeTypes = require('phoneme-types');
 var queue = require('queue-async');
 var path = require('path');
 var probable = require('probable');
@@ -42,7 +42,7 @@ function createHomophonizer() {
         done(null, []);
       }
 
-      phonemes = phonemes.map(phonemeNavigator.stripStressor);
+      phonemes = phonemes.map(phonemeTypes.stripStressor);
 
       var phonemeVariantCombos = getSimplePhonemeVariants(
         phonemes, opts.varyPhonemesAtPositions
@@ -84,8 +84,8 @@ function createHomophonizer() {
         done(null, []);
       }
 
-      phonemes = phonemes.map(phonemeNavigator.stripStressor);
-      done(null, phonemes.map(phonemeNavigator.classifyPhoneme));
+      phonemes = phonemes.map(phonemeTypes.stripStressor);
+      done(null, phonemes.map(phonemeTypes.classifyPhoneme));
     }
   }
 
@@ -98,7 +98,7 @@ function createHomophonizer() {
       var shouldVary = (variancePositions.indexOf(positionInSequence) !== -1);
 
       if (shouldVary) {
-        var variants = phonemeNavigator.getPhonemesInSameClass(phoneme);
+        var variants = phonemeTypes.getPhonemesInSameClass(phoneme);
         var putVariantInSeq = _.curry(putVariantInSequence)(
           phonemeSequence, positionInSequence
         );
@@ -124,7 +124,7 @@ function createHomophonizer() {
         return [phoneme];
       }
       else {
-        return phonemeNavigator.getPhonemesInSameClass(phoneme);
+        return phonemeTypes.getPhonemesInSameClass(phoneme);
       }
     });
 
