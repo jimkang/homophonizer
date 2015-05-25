@@ -168,7 +168,8 @@ function createHomophonizer() {
     getImperfectHomophones: getImperfectHomophones,
     shutdown: shutdown,
     getPhonemesInWord: getPhonemesInWord,
-    getPhonemeClassesForWord: getPhonemeClassesForWord
+    getPhonemeClassesForWord: getPhonemeClassesForWord,
+    phonemeWordDb: db
   };
 }
 

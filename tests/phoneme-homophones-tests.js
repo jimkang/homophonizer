@@ -130,4 +130,10 @@ suite('Find homophones', function findHomophonesSuite() {
     }
   );
 
+  test('Verify that you can get at the phonemeWordDb',
+    function testUseDb() {
+      assert.ok(homophonizer.phonemeWordDb.words, 'words property exists.');
+      assert.ok(homophonizer.phonemeWordDb.phonemes, 'phonemes property exists.');
+    }
+  );
 });

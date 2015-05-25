@@ -1,6 +1,6 @@
 {
   "name": "homophonizer",
-  "version": "0.2.3",
+  "version": "1.0.0",
   "description": "Gets homophones.",
   "main": "index.js",
   "scripts": {
@@ -12,8 +12,10 @@
     "url": "git@github.com:jimkang/homophonizer.git"
   },
   "keywords": [
-    "module",
-    "thing"
+    "homophones",
+    "words",
+    "phonemes",
+    "metaphone"
   ],
   "author": "Jim Kang",
   "license": "MIT",

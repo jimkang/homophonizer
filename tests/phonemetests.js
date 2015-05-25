@@ -5,7 +5,6 @@ var fs = require('fs');
 var idmaker = require('idmaker');
 var queue = require('queue-async');
 var level = require('level');
-var homophonizerFactory = require('../phoneme/phonemehomophonizer');
 
 require('approvals')
   .configure({errorOnStaleApprovedFiles: false})
