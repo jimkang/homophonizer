@@ -30,12 +30,12 @@
   },
   "dependencies": {
     "double-metaphone": "~0.1.0",
-    "level": "~0.18.0",
-    "level-sublevel": "~6.1.6",
+    "level": "^1.0.0",
+    "level-sublevel": "^6.4.6",
     "lodash": "~2.4.1",
+    "phoneme-types": "~1.1.1",
     "probable": "^1.0.0",
     "queue-async": "~1.0.7",
-    "split": "~0.3.0",
-    "phoneme-types": "~1.1.1"
+    "split": "~0.3.0"
   }
 }
