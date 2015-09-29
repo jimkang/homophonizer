@@ -10,7 +10,11 @@ var probable = require('probable');
 
 var db;
 
-function createHomophonizer() {
+function createHomophonizer(createOpts) {
+  if (createOpts && createOpts.probable) {
+    probable = createOpts.probable;
+  }
+
   var dir = path.dirname(module.filename);
   var dbPath = path.resolve(dir + '/phoneme.db');
   var opts = _.defaults({dbLocation: dbPath}, dbsettings);
