@@ -41,3 +41,5 @@ lookup:
 	# @cd tools && echo "Metaphone-based:" && node lookup-metaphone-homophones.js $(WORD)
 	@cd tools && echo "Phoneme-based:" && node lookup-phoneme-homophones.js $(WORD) --imperfect
 
+pushall:
+	git push origin master && npm publish
