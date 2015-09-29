@@ -1,6 +1,6 @@
 {
   "name": "homophonizer",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Gets homophones.",
   "main": "index.js",
   "scripts": {
